@@ -40,8 +40,8 @@ dts += """
 		main_ram_size=d["memories"]["main_ram"]["size"],
 		main_ram_size_mb=d["memories"]["main_ram"]["size"]//mB,
 
-		linux_initrd_start=d["memories"]["main_ram"]["base"] + 8*mB,
-		linux_initrd_end=d["memories"]["main_ram"]["base"] + 16*mB)
+		linux_initrd_start=d["memories"]["main_ram"]["base"] + 3*mB,
+		linux_initrd_end=d["memories"]["main_ram"]["base"] + 15*mB)
 
 # CPU ----------------------------------------------------------------------------------------------
 

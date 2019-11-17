@@ -98,11 +98,11 @@ class SoCLinux(SoCCore):
             cpu_type="vexriscv", cpu_variant="linux",
             with_uart=False,
             integrated_rom_size=0x8000,
-            integrated_main_ram_size=0x02000000, # 32MB
+            integrated_main_ram_size=0x01000000, # 16MB
             integrated_main_ram_init=get_mem_data({
                 "buildroot/Image":         "0x00000000",
-                "buildroot/rootfs.cpio":   "0x00800000",
-                "buildroot/rv32.dtb":      "0x01000000"
+                "buildroot/rootfs.cpio":   "0x00300000",
+                "buildroot/rv32.dtb":      "0x00fff000"
                 }, "little") if init_memories else [])
         self.add_constant("SIM", None)
 

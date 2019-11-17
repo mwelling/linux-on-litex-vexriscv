@@ -16,7 +16,7 @@
 #include "framebuffer.h"
 
 #define LINUX_IMAGE_BASE 0xC0000000
-#define LINUX_DTB_BASE   0xC1000000
+#define LINUX_DTB_BASE   0xC0fff000
 
 #define max(a,b) \
   ({ __typeof__ (a) _a = (a); \
@@ -543,7 +543,7 @@ int main(void)
 	irq_setmask(0);
 	irq_setie(1);
 	uart_init();
-	puts("VexRiscv Machine Mode software built "__DATE__" "__TIME__"");
+	printf("VexRiscv Machine Mode software built "__DATE__" "__TIME__" %x\n", LINUX_DTB_BASE);
 #ifdef CSR_FRAMEBUFFER_BASE
 	framebuffer_init();
 #endif
